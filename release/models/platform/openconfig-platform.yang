@@ -136,8 +136,18 @@ module openconfig-platform {
   oc-ext:catalog-organization "openconfig";
   oc-ext:origin "openconfig";
 
-  // grouping statements
+  typedef arbitrary-name {
+      type string;
+  }
 
+  // grouping statements
+  grouping user-label {
+    leaf user-label {
+      type string { length 0..128; }
+      description
+        "Free user label/ comment.";
+    }
+  }
 
   grouping platform-component-properties-config {
     description
@@ -286,7 +296,7 @@ module openconfig-platform {
       "Configuration data for components";
 
     leaf name {
-      type string;
+      type arbitrary-name;
       description
         "Device name for the component -- this may not be a
         configurable parameter on many implementations.  Where
@@ -742,8 +752,8 @@ module openconfig-platform {
         container config {
           description
             "Configuration data for each component";
-
           uses platform-component-config;
+          uses user-label;
         }
 
         container state {

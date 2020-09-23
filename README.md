@@ -16,6 +16,7 @@ needs from use cases and requirements from multiple network operators.
 
 ## Contributing to OpenConfig
 
+This repository is a fork of openconfig/public repo.
 This repository is primarily for publishing the models, documents, and other
 material developed by the OpenConfig operators group.
 
@@ -31,4 +32,19 @@ or by opening a GitHub [issue](https://github.com/openconfig/public/issues).
 Please see the [OpenConfig web site](http://www.openconfig.net) for information
 for operators wishing to join OpenConfig, in particular the
 [FAQ for operators](http://openconfig.net/docs/faq-for-operators/).
+
+## About this fork
+
+In order to keep this fork up-to-date with openconfig, use:
+````
+git remote add upstream git@github.com:openconfig/public.git
+````
+
+If this is correctly configured, you should see:
+````
+origin  git@github.com:serrasqueiro/openconfig_public.git (fetch)
+origin  git@github.com:serrasqueiro/openconfig_public.git (push)
+upstream        git@github.com:openconfig/public.git (fetch)
+upstream        git@github.com:openconfig/public.git (push)
+````
 
