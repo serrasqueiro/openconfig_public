@@ -40,7 +40,22 @@ module openconfig-aft {
     is referred to as an Abstract Forwarding Table (AFT), rather than
     the FIB.";
 
-  oc-ext:openconfig-version "0.4.1";
+  oc-ext:openconfig-version "0.6.0";
+
+  revision "2020-11-06" {
+    description
+      "Make AFT model read-only.";
+    reference "0.6.0";
+  }
+
+  revision "2020-09-09" {
+    description
+      "Remove leafs that are not used as keys from config containers as
+      AFT model is ready-only.
+      * next-hop/interface-ref/config.
+      * all leafs under policy-forwarding-entry/config except index.";
+    reference "0.5.0";
+  }
 
   revision "2019-11-07" {
     description
@@ -97,6 +112,7 @@ module openconfig-aft {
       AFT.";
 
     container afts {
+      config false;
       description
         "The abstract forwarding tables (AFTs) that are associated
         with the network instance. An AFT is instantiated per-protocol
